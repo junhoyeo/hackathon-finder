@@ -22,5 +22,6 @@ def search(keyword):
 
   return events
 
-events = search('해커톤') + search('아이디어톤')
+events = search('해커톤')
+events += [event for event in search('아이디어톤') if event['id'] not in events]
 print(*events, sep='\n')
